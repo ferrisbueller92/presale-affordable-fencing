@@ -1,0 +1,149 @@
+/* Affordable Fencing Company — styles. Composition: two-column hero + card grids. Sturdy trade editorial. */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{font-family:var(--f-body);font-size:var(--t-body);line-height:1.65;color:var(--ink);background:var(--bone);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem)}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.04;letter-spacing:-.02em}
+.kicker{font-family:var(--f-body);font-size:var(--t-kicker);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--euc)}
+.tw{color:var(--timber-deep)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-body);font-weight:700;letter-spacing:.01em;font-size:1rem;padding:.95rem 1.7rem;border-radius:var(--r-sm);transition:transform var(--dur) var(--ease),background .3s,color .3s;cursor:pointer;border:2px solid var(--ink)}
+.btn-primary{background:var(--euc);color:#fff;border-color:var(--euc)}
+.btn-primary:hover{background:var(--euc-deep);border-color:var(--euc-deep);transform:translateY(-3px)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bone);transform:translateY(-3px)}
+.btn.big{font-size:1.08rem;padding:1.1rem 2rem}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.05rem clamp(1.2rem,4vw,2.5rem);transition:background .4s,box-shadow .4s,padding .4s}
+.nav.scrolled{background:rgba(244,241,234,.93);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding-top:.7rem;padding-bottom:.7rem}
+.wordmark{font-family:var(--f-display);font-weight:800;font-size:1.32rem;color:var(--ink);letter-spacing:-.02em}
+.wordmark .co{color:var(--timber)}
+.nav-links{display:flex;align-items:center;gap:1.7rem;font-weight:600;font-size:.96rem}
+.nav-links a:not(.btn):hover{color:var(--euc)}
+.nav .btn{padding:.55rem 1.2rem;font-size:.9rem;border-width:2px}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer}
+/* nav over the dark hero video → light until scrolled */
+.nav:not(.scrolled) .wordmark,.nav:not(.scrolled) .nav-links a:not(.btn){color:#fff}
+.nav:not(.scrolled) .nav-links a:not(.btn):hover{color:#ecc9a0}
+.nav:not(.scrolled) .nav-toggle span{background:#fff}
+
+/* HERO — full-bleed cinematic background video */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:var(--bone);overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media video{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,20,24,.62) 0%,rgba(18,20,24,.34) 44%,rgba(18,20,24,.82) 100%)}
+.hero-inner{position:relative;z-index:3;max-width:1000px;text-align:center;padding:5rem 0 1rem}
+.hero .kicker{display:block;margin-bottom:1.1rem;color:#ecc9a0}
+.hero h1{font-size:var(--t-hero);font-weight:800;letter-spacing:-.035em;color:#fff;text-shadow:0 8px 44px rgba(0,0,0,.45);padding-bottom:.22em}
+.hero h1 .ul{color:#fff;position:relative;white-space:nowrap}
+.hero h1 .ul::after{content:"";position:absolute;left:0;right:0;bottom:-.16em;height:.1em;background:var(--timber);border-radius:2px}
+.hero .sub{font-size:clamp(1.08rem,1.5vw,1.32rem);max-width:40em;margin:1.5rem auto 2rem;color:#ece8df;text-shadow:0 2px 18px rgba(0,0,0,.4)}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.9rem}
+.hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.65)}
+.hero .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.trust{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;justify-content:center;font-size:.95rem;color:#e9e5dc;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.trust .stars{color:var(--timber);letter-spacing:.06em}
+.trust b{color:#fff;font-weight:800}
+.trust .dot{color:rgba(255,255,255,.4)}
+
+/* sections + reveal */
+.sec{padding:var(--s-7) 0}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease-out),transform .85s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}.reveal.d3{transition-delay:.27s}
+.sec-head{max-width:680px;margin-bottom:var(--s-5)}
+.sec-head h2{font-size:var(--t-h2);margin:.55rem 0}
+.sec-head p{color:var(--ink-soft);font-size:1.1rem}
+
+/* SERVICES — fence-type cards */
+.services{background:var(--bone)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:1.7rem 1.6rem;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.svc:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft);border-color:var(--timber)}
+.svc-ico{font-size:1.6rem;color:var(--euc);line-height:1;margin-bottom:.9rem}
+.svc h3{font-size:var(--t-h3);font-weight:700;margin-bottom:.5rem}
+.svc p{color:var(--ink-soft);font-size:.98rem}
+@media(max-width:880px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* GALLERY — our work */
+.gallery{background:var(--sand)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery-grid figure{position:relative;overflow:hidden;border-radius:var(--r-md);aspect-ratio:1;box-shadow:var(--shadow-soft)}
+.gallery-grid figure.feature{grid-column:span 2;grid-row:span 2}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gallery-grid figure:hover img{transform:scale(1.05)}
+@media(max-width:880px){.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid figure.feature{grid-column:auto;grid-row:auto;aspect-ratio:1}}
+
+/* WHY — dark band */
+.why{background:var(--ink);color:var(--bone)}
+.why-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.why .kicker{color:var(--timber)}
+.why h2{font-size:var(--t-h2);color:#fff;margin:.8rem 0 1.2rem}
+.why-copy p{color:#d7d3ca;font-size:1.12rem;margin-bottom:1rem;max-width:52ch}
+.why-copy .muted{color:#9c9890;font-size:1rem}
+.why-facts{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.why-facts .fact{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:1.3rem 1.4rem}
+.why-facts .n{font-family:var(--f-display);font-weight:800;font-size:1.9rem;color:var(--timber);line-height:1}
+.why-facts .l{font-size:.85rem;color:#b4afa6;margin-top:.4rem}
+
+/* PROOF */
+.proof{background:var(--bone);text-align:center}
+.proof .stars.big{color:var(--timber);font-size:1.5rem;letter-spacing:.2rem}
+.proof blockquote{font-family:var(--f-display);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.7rem);line-height:1.22;max-width:980px;margin:1.1rem auto;color:var(--ink);letter-spacing:-.01em}
+.proof cite{font-style:normal;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--euc);font-size:.88rem}
+.mini-revs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:var(--s-5);text-align:left}
+.mini-rev{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:1.3rem 1.4rem}
+.mini-rev p{font-size:.97rem;color:var(--ink-soft)}
+.mini-rev .who{font-family:var(--f-display);font-weight:700;color:var(--euc);margin-top:.8rem;font-size:.92rem}
+
+/* CONTACT + service area */
+.contact{background:var(--euc-deep);color:var(--bone)}
+.contact-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.contact .kicker{color:var(--timber)}
+.contact h2{font-size:var(--t-h2);color:#fff;margin:.7rem 0 1rem}
+.contact-lead{color:#cfe0d6;font-size:1.12rem;max-width:42ch;margin-bottom:1.7rem}
+.contact .btn-primary{background:var(--timber);border-color:var(--timber);color:#fff}
+.contact .btn-primary:hover{background:var(--timber-deep);border-color:var(--timber-deep)}
+.hours{margin-top:1.8rem;max-width:380px}
+.hours-row{display:flex;justify-content:space-between;padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:1.02rem}
+.hours-row span:first-child{color:#bcd2c5}
+.area{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:1.8rem}
+.area-head{font-family:var(--f-display);font-weight:700;color:var(--timber);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.1rem}
+.area-suburbs{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.6rem}
+.area-suburbs span{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-pill);padding:.4rem .9rem;font-size:.9rem;color:#e6efe9}
+.area-base{display:flex;gap:.85rem;align-items:flex-start;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.14)}
+.area-base .ico{font-size:1.2rem}
+.area-base .l{font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:#a9c0b3}
+.area-base a{color:#fff}.area-base a:hover{color:var(--timber)}
+
+/* footer */
+footer{background:var(--ink);color:#c7c3bb;padding:var(--s-6) 0 var(--s-3)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2rem;padding-bottom:var(--s-4);border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-grid .wordmark{font-size:1.6rem}
+.foot-blurb{margin-top:1rem;max-width:34ch;color:#a9a59d}
+.foot-col h4{font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;color:var(--timber);margin-bottom:.9rem;font-weight:700;font-family:var(--f-display)}
+.foot-col a,.foot-col p{display:block;color:#c7c3bb;margin-bottom:.5rem;font-size:.95rem}.foot-col a:hover{color:#fff}
+.foot-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-top:1.3rem;font-size:.8rem;color:#8d8980}
+
+@media(max-width:880px){
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,300px);flex-direction:column;justify-content:center;background:var(--ink);transform:translateX(100%);transition:transform .45s var(--ease);gap:1.6rem;padding:2rem}
+  .nav-links.open{transform:none}
+  .nav-links a:not(.btn){color:var(--bone)!important;font-size:1.15rem}
+  .nav-toggle{display:block;z-index:60}.nav-toggle span{display:block;width:26px;height:2px;background:var(--ink);margin:6px 0;transition:.3s}
+  .hero-inner{padding:6rem 0 1rem}
+  .why-grid,.contact-grid{grid-template-columns:1fr}
+  .mini-revs{grid-template-columns:1fr}
+  .why-facts{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Hide Safari/iOS play-button overlay shown when autoplay is blocked — hero shows a clean
+   poster frame; the muted video starts on autoplay (where allowed) or first scroll/tap. */
+video::-webkit-media-controls-start-playback-button,
+video::-webkit-media-controls-overlay-play-button,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls{display:none!important;-webkit-appearance:none}

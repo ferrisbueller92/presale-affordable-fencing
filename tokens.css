@@ -1,0 +1,36 @@
+/* Affordable Fencing Company — brand kit.
+   Trade / fence contractor. Sturdy, grounded, premium Eastern-Suburbs.
+   Ironbark charcoal + warm timber + bone, eucalyptus-green accent.
+   Deliberately distinct from the cafe (cream/teal) and nail (blush/rose) builds. */
+:root{
+  --bone:#F4F1EA;        /* warm off-white bg */
+  --paper:#FFFFFF;
+  --sand:#EAE4D7;        /* secondary surface */
+  --ink:#21242A;         /* ironbark charcoal */
+  --ink-soft:#565B63;
+  --timber:#B87A45;      /* warm timber — warm accent */
+  --timber-deep:#9A6235;
+  --euc:#3E5A4E;         /* eucalyptus green — primary accent */
+  --euc-deep:#2C443A;
+  --steel:#8A9099;       /* muted metal */
+  --line:#e2dccf;
+
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif; /* industrial-confident */
+  --f-body:"Manrope",system-ui,-apple-system,sans-serif;     /* clean modern sans */
+
+  --t-hero:clamp(2.7rem,7vw,6.2rem);
+  --t-h2:clamp(2rem,4.2vw,3.4rem);
+  --t-h3:clamp(1.15rem,1.7vw,1.45rem);
+  --t-kicker:.78rem;
+  --t-body:clamp(1rem,1.05vw,1.14rem);
+
+  --s-2:1rem;--s-3:1.5rem;--s-4:2.5rem;--s-5:4rem;--s-6:6rem;--s-7:8rem;
+  --maxw:1220px;
+
+  --r-sm:6px;--r-md:14px;--r-lg:20px;--r-pill:999px;
+  --shadow:0 28px 64px -30px rgba(33,36,42,.5);
+  --shadow-soft:0 16px 38px -24px rgba(33,36,42,.34);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --dur:.55s;
+}
